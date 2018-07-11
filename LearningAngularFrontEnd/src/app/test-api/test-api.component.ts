@@ -11,7 +11,7 @@ export class TestApiComponent implements OnInit {
   constructor(private apiServive : TestApiServiceService ) { }
 
   ngOnInit() {
-    this.apiServive.getUsers().subscribe(data=>{})
+ //   this.apiServive.getUsers().subscribe(data=>{})
    
   }
 

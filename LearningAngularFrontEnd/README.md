@@ -25,3 +25,30 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+
+//___________________Techinical Topics_______________________//
+
+
+Decorators
+   In angular we have two types of decorators 
+      1) Class Decorators : Decorator which is applied on Class is the Class Decorator
+      2) Member Decorators : which is applied on function 
+      //reference code at app.component.ts
+
+
+__________________________________________________________
+
+LifeChycleHooks
+
+  Some of the lifechylce hook methods in angular are
+      OnChanges
+      OnInit
+      DoCheck
+      AfterContentInit
+      AfterContentChecked
+      AfterViewInit
+      AfterViewChecked
+      OnDestory
