@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 //___________________Techinical Topics_______________________//
-
+<pre>
 
 Decorators
    In angular we have two types of decorators 
@@ -52,3 +52,5 @@ LifeChycleHooks
       AfterViewInit
       AfterViewChecked
       OnDestory
+      
+</pre>
