@@ -1,1 +1,17 @@
 <app-test-api></app-test-api>
+<hr>
+
+<input type="text" (input)="updateValue($event)" /> 
+<hr>
+<P>The two data is :   {{twoWayData}}</P>
+
+<hr>
+<app-example-ng-for></app-example-ng-for>
+
+<hr>
+<app-example-service></app-example-service>
+<hr>
+<p>Navigaction starts </p>
+
+<a routerLink='/home'>Go to home page</a>
+<router-outlet></router-outlet>

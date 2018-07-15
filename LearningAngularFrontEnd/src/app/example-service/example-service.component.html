@@ -1,0 +1,13 @@
+<table>
+
+  <tr>
+    <td>Name</td>
+    <td>OnlineStatus</td>
+  </tr>
+  <tr *ngFor="let record of records ; let myIndex = index">
+
+    <td>{{myIndex}}</td>
+    <td>{{record.name}}</td>
+    <td>{{record.onlineStatus}}</td>
+  </tr>
+</table>

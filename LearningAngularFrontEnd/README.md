@@ -52,5 +52,48 @@ LifeChycleHooks
       AfterViewInit
       AfterViewChecked
       OnDestory
-      
+
+
+Suscribe
+      Suscribe is the Rxjs component to handle the asyncronicus data as pipe,i.e  the end points can emit the some events so we need to sucribe that event.
+    
+
+Deploying the app in tomcat server
+
+      1) ng build --prod --base-href=/appName/
+      2) create Directory with thenname <b>appName</b> in webapps directory
+      3) Copy all files in dist direcory and paste in appName folder in webapps
+      4) Then access the application using localhost:8080/appName
+
+Implementing routing
+
+      1) import {  RouterModule } from '@angular/router'
+      2) In imports array add 
+      <pre> RouterModule.forRoot([
+      {
+      path: 'home',
+      component : HomeComponent
+    },
+    {
+      path : 'users',
+      component : UsersComponent
+    }
+  ])
+  </pre>
+
+      iii) and keep routeroutlet to where our routes need to be render
+            <router-outlet></router-outlet>
+      iV) in your html add navingaiong to the these links like
+         <a routerLink='/home'>Go to home page</a>
+         
+ HashloacationStargey 
+
+      i) import { LocationStrategy, HashLocationStrategy } from '@angular/common'; in app.module.ts
+      ii)  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}], in app.module.ts
+
+
+
+
 </pre>
+
+

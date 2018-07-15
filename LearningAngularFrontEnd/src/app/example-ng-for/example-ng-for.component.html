@@ -1,0 +1,28 @@
+
+<h5>*ngFor Examaple</h5>
+
+<table>
+
+  <tr>
+    <td>Name</td>
+    <td>OnlineStatus</td>
+  </tr>
+  <tr *ngFor="let record of records ; let myIndex = index">
+
+    <td>{{myIndex}}</td>
+    <td>{{record.name}}</td>
+    <td>{{record.onlineStatus}}</td>
+  </tr>
+
+
+
+
+  <tr *ngFor="let record of records ; let myIndex = index; let evenRecord = even ; let oddRecord = odd; let firstRec = first ; let lastRec = last" [ngClass]="{firstClass : firstRec,lastClass : lastRec, oddClass : oddRecord,evenClass : evenRecord}">
+
+    <td>{{myIndex}}</td>
+    <td>{{record.name}}</td>
+    <td>{{record.onlineStatus}}</td>
+  </tr>
+</table>
+
+
