@@ -13,6 +13,8 @@ import { CutsomDecoratorComponent } from './cutsom-decorator/cutsom-decorator.co
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UsersComponent } from './users/users.component';
     ExampleServiceComponent,
     CutsomDecoratorComponent,
     HomeComponent,
-    UsersComponent
+    UsersComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,14 @@ import { UsersComponent } from './users/users.component';
     {
       path : 'users',
       component : UsersComponent
+    },
+    {
+      path : 'login',
+      component : LoginComponent
+    },
+    {
+      path : 'admin',
+      component : AdminComponent
     }
   ])
   ],
