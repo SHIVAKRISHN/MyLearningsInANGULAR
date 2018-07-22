@@ -30,10 +30,21 @@ this.authService.validateUser(userName,password).subscribe(data => {
   if(data.response == "Valid User")
   {
    this.router.navigate(["/admin"]) 
+   this.authService.setLoggedInStatus(true);
+
+   // for localstorage comment
+      //localStorage.setItem("isLoggedIn","true");
+ 
+ 
+ 
+    
+   // this.authService.isLogggedinStatus=true;
   }
   else
   {
-
+    this.authService.setLoggedInStatus(false);
+    //for localstorage comment
+        //localStorage.removeItem("isLoggedIn");
   }
 })
     console.log(event);

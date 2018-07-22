@@ -1,0 +1,8 @@
+<div *ngIf="randomVariableValue; then trueBlock else falseBlock"></div>
+
+<ng-template #trueBlock>
+  <div> <p>This is true block</p></div>
+</ng-template>
+<ng-template #falseBlock>
+<div><p>This is false block</p></div>
+</ng-template>

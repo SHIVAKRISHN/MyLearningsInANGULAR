@@ -16,6 +16,14 @@ import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 
+import { GuardAuthGuard } from './guard-auth.guard';
+import { CustomStringPipe } from './custom-string.pipe';
+import { ExamplePipeComponent } from './example-pipe/example-pipe.component';
+import { NgIfExampleComponent } from './ng-if-example/ng-if-example.component';
+import { NgNonBindaleComponent } from './ng-non-bindale/ng-non-bindale.component';
+import { CustomDirective } from './custom.directive';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +34,13 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     UsersComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    CustomStringPipe,
+    ExamplePipeComponent,
+    NgIfExampleComponent,
+    NgNonBindaleComponent,
+    CustomDirective,
+    CustomDirectiveComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +60,28 @@ import { AdminComponent } from './admin/admin.component';
     },
     {
       path : 'admin',
-      component : AdminComponent
+      component : AdminComponent,
+      canActivate : [GuardAuthGuard]
+    },
+    {
+      path : 'customePipe',
+      component : ExamplePipeComponent
+    },
+    {
+      path:'ngIfExample',
+      component : NgIfExampleComponent
+    },
+    {
+      path : 'ngNonBindable',
+      component : NgNonBindaleComponent
+    },
+    {
+      path :'customeDirective',
+      component : CustomDirectiveComponent
     }
   ])
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, GuardAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
