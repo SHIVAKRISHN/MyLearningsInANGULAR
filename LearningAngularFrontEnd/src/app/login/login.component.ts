@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthService} from './auth.service'
 import { Router } from '@angular/router';
+import { ACTION_LOGIN } from '../store/actions/appActions';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -31,6 +32,10 @@ this.authService.validateUser(userName,password).subscribe(data => {
   {
    this.router.navigate(["/admin"]) 
    this.authService.setLoggedInStatus(true);
+    this.authService.updateState({
+      action : ACTION_LOGIN,
+      payload : userName
+    })
 
    // for localstorage comment
       //localStorage.setItem("isLoggedIn","true");

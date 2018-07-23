@@ -22,7 +22,12 @@ import { ExamplePipeComponent } from './example-pipe/example-pipe.component';
 import { NgIfExampleComponent } from './ng-if-example/ng-if-example.component';
 import { NgNonBindaleComponent } from './ng-non-bindale/ng-non-bindale.component';
 import { CustomDirective } from './custom.directive';
-import { CustomDirectiveComponent } from './custom-directive/custom-directive.component'
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { HeaderComponent } from './header/header.component'
+
+//redux
+import { StoreModule } from '@ngrx/store'
+import { reducers } from './store/reducers'
 
 @NgModule({
   declarations: [
@@ -40,11 +45,20 @@ import { CustomDirectiveComponent } from './custom-directive/custom-directive.co
     NgIfExampleComponent,
     NgNonBindaleComponent,
     CustomDirective,
-    CustomDirectiveComponent
+    CustomDirectiveComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    //redux
+    StoreModule.forRoot(reducers,{
+     /*  initialState :
+      {
+        greetingMessage : "Hello Guest",
+        login : false
+      } */
+    }),
     RouterModule.forRoot([
       {
       path: 'home',

@@ -2,11 +2,18 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 
 interface dataObj
 {
   response : string;
+}
+interface stobj
+{
+  action: string;
+  payload: any;
 }
 
 @Injectable({
@@ -14,7 +21,9 @@ interface dataObj
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private store : Store<any>
+              ) { }
 // For localstorage comment
   //private isLogggedinStatus=JSON.parse(localStorage.getItem("isLoggedIn") || 'false');
 
@@ -47,4 +56,19 @@ get isLoggedIn()
     return this.http.get<dataObj>('/api/authCheck');
   }
 
+  //redux
+
+  getAllState()
+  {
+      return this.store.select('appReducer')
+  }
+
+  updateState(obj)
+  {
+this.store.dispatch(
+  {
+    type : obj.action,
+    payload : obj.payload
+  })
+  }
 }
